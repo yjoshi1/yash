@@ -136,7 +136,7 @@ body {
 
 @font-face {
   font-family: 'PixelFont'; /* Choose a name for your font */
-  src: url('../images/RETROTECH.ttf') 
+  src: url('/Users/yashjoshi/Desktop/10-19 Life Admin/18 Internet/18.12 Portfolio/kross-bootstrap-main/theme/images/RETROTECH.ttf') 
   format('truetype'); /* Replace with your font file path */
   /* Or use a web font from a service like Google Fonts */
   /* src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');  */
