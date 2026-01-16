@@ -22,27 +22,9 @@ const About = () => {
                         {/* Left Column: Bio */}
                         <div className="md:col-span-2 prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
                             <p className="mb-6">
-                                I'm a data analyst with a passion for turning complex data into actionable insights
-                                that drive business growth and strategic decisions. I thrive at the intersection of data strategy
-                                and storytelling, helping teams unlock the full potential of their information.
+                                I turn data into a strategic driver for business success. From leading the design of revenue-reporting solutions in Domo to automating forecasting with leadership, I build the robust foundations required for modern analytics. My work ensures that every dashboard and data mart is built on a framework of security, compliance, and forward-looking strategy.
                             </p>
-                            <p className="mb-6">
-                                Recently, I led the design of a scalable BI solution in Domo that
-                                streamlined revenue reporting and gave stakeholders faster, clearer access to key metrics.
-                                I specialize in building robust, end-to-end data architectures—think consolidated data marts
-                                and performance dashboards—that elevate how organizations track and act on their goals.
-                            </p>
-                            <p className="mb-6">
-                                My work spans close collaboration with cross-functional teams:
-                                partnering with leadership to automate forecasting, enabling smarter sales strategies,
-                                and working with engineers to prep data for AI-powered analytics. I'm equally invested
-                                in the foundations—co-developing data governance frameworks that ensure security,
-                                compliance, and trust in every insight delivered.
-                            </p>
-                            <p>
-                                At the heart of it all, I aim to turn data into a strategic asset that empowers confident,
-                                forward-looking decisions.
-                            </p>
+
 
                             <div className="mt-8">
                                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">Tech Stack</h3>
@@ -76,7 +58,7 @@ const About = () => {
                                         <span className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg text-slate-900 dark:text-neon-green">
                                             ⚽️
                                         </span>
-                                        <span className="font-medium">Football (Arsenal FC)</span>
+                                        <span className="font-medium">Arsenal FC</span>
                                     </li>
                                     <li className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
                                         <span className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg text-slate-900 dark:text-neon-green">
