@@ -62,21 +62,29 @@ const Home = () => {
                     business insights through robust architecture and compelling visualizations.
                 </p>
 
-                <div className="flex gap-4">
-                    <a
-                        href="#projects"
-                        className="group flex items-center gap-2 bg-slate-900 dark:bg-neon-green text-white dark:text-matte-black px-6 py-3 rounded-full font-medium active:scale-95 transition-all"
-                    >
-                        View Work
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2.5, duration: 1 }}
+                    className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+                >
+                    <a href="#about" className="flex flex-col items-center gap-2 group cursor-pointer">
+                        <span className="text-xs font-medium tracking-widest text-slate-500 dark:text-slate-400 uppercase opacity-70 group-hover:text-slate-900 dark:group-hover:text-neon-green transition-colors">
+                            Explore
+                        </span>
+                        <div className="w-6 h-10 border-2 border-slate-400 dark:border-slate-500 rounded-full flex justify-center p-1 opacity-70 group-hover:border-slate-900 dark:group-hover:border-neon-green transition-colors">
+                            <motion.div
+                                animate={{ y: [0, 12, 0] }}
+                                transition={{
+                                    duration: 1.5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                                className="w-1 h-2 bg-slate-400 dark:bg-slate-500 rounded-full group-hover:bg-slate-900 dark:group-hover:bg-neon-green"
+                            />
+                        </div>
                     </a>
-                    <a
-                        href="#about"
-                        className="flex items-center gap-2 text-slate-600 dark:text-slate-300 px-6 py-3 rounded-full font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-                    >
-                        About Me
-                    </a>
-                </div>
+                </motion.div>
             </motion.div>
         </div>
     );
