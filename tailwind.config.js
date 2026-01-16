@@ -10,6 +10,10 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      colors: {
+        'matte-black': '#0f1716',
+        'neon-green': '#2DD4BF',
+      },
     },
   },
   plugins: [],
