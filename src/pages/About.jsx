@@ -26,16 +26,20 @@ const About = () => {
                             </p>
 
 
-                            <div className="mt-8">
-                                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">Tech Stack</h3>
-                                <div className="flex flex-wrap gap-2">
+                            <div className="mt-12">
+                                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                    <span className="w-8 h-1 bg-neon-green rounded-full"></span>
+                                    Data Toolkit
+                                </h3>
+                                <div className="flex flex-wrap gap-4">
                                     {skills.map((skill, index) => (
-                                        <span
+                                        <motion.div
                                             key={index}
-                                            className="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium border border-slate-200 dark:border-slate-700"
+                                            whileHover={{ y: -5, scale: 1.05 }}
+                                            className="px-5 py-3 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border-l-4 border-neon-green shadow-sm rounded-r-xl text-slate-700 dark:text-slate-200 font-medium text-sm flex items-center gap-2"
                                         >
                                             {skill}
-                                        </span>
+                                        </motion.div>
                                     ))}
                                 </div>
                             </div>
