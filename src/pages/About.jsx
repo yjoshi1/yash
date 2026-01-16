@@ -1,10 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Database, Server, Workflow, BarChart2, TrendingUp, PieChart, Code, Terminal, Braces } from 'lucide-react';
 
-const skills = [
-    "Domo", "SQL", "Python", "Data Science",
-    "Tableau", "Power BI", "Data Architecture"
+const toolkitData = [
+    {
+        category: "Data Engineering",
+        tools: [
+            { name: "SQL", icon: Database, badge: "Advanced" },
+            { name: "Data Marts", icon: Server, badge: "Architect" },
+            { name: "ETL/ELT", icon: Workflow, badge: "Scalable Pipelines" }
+        ]
+    },
+    {
+        category: "Analytics & BI",
+        tools: [
+            { name: "Domo", icon: BarChart2, badge: "Specialist", highlight: true },
+            { name: "Google Analytics", icon: TrendingUp, badge: "Certified" },
+            { name: "Power BI", icon: PieChart, badge: "Proficient" }
+        ]
+    },
+    {
+        category: "Programming",
+        tools: [
+            { name: "Python", icon: Terminal, badge: "Data Scripting" },
+            { name: "R", icon: Code, badge: "Statistical Analysis" },
+            { name: "JavaScript", icon: Braces, badge: "Frontend Viz" }
+        ]
+    }
 ];
+
+const ToolCard = ({ tool }) => {
+    const [isClicked, setIsClicked] = useState(false);
+
+    return (
+        <motion.div
+            layout
+            onClick={() => setIsClicked(!isClicked)}
+            whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(45, 212, 191, 0.1)" }}
+            whileTap={{ scale: 0.98 }}
+            className={`cursor-pointer relative p-4 rounded-xl border transition-all duration-300 ${tool.highlight
+                    ? "bg-neon-green/10 border-neon-green/30 dark:bg-neon-green/5 dark:border-neon-green/20"
+                    : "bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 hover:border-neon-green/50 dark:hover:border-neon-green/50"
+                } backdrop-blur-sm group`}
+        >
+            <div className="flex items-center gap-3">
+                <div className={`p-2 rounded-lg ${tool.highlight ? "bg-neon-green text-matte-black" : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 group-hover:text-neon-green group-hover:bg-slate-900 transition-colors"}`}>
+                    <tool.icon size={20} />
+                </div>
+                <div>
+                    <h4 className="font-semibold text-sm text-slate-900 dark:text-white">{tool.name}</h4>
+                    {isClicked && (
+                        <motion.span
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            className="text-xs font-medium text-neon-green block"
+                        >
+                            {tool.badge}
+                        </motion.span>
+                    )}
+                </div>
+            </div>
+            {!isClicked && tool.highlight && (
+                <span className="absolute top-2 right-2 flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-green opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-green"></span>
+                </span>
+            )}
+        </motion.div>
+    );
+};
 
 const About = () => {
     return (
@@ -19,27 +83,33 @@ const About = () => {
                     <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">About Me</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        {/* Left Column: Bio */}
-                        <div className="md:col-span-2 prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-                            <p className="mb-6">
-                                I turn data into a strategic driver for business success. From leading the design of revenue-reporting solutions in Domo to automating forecasting with leadership, I build the robust foundations required for modern analytics. My work ensures that every dashboard and data mart is built on a framework of security, compliance, and forward-looking strategy.
-                            </p>
+                        {/* Left Column: Bio & Toolkit */}
+                        <div className="md:col-span-2">
+                            <div className="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-12">
+                                <p className="mb-6">
+                                    I turn data into a strategic driver for business success. From leading the design of revenue-reporting solutions in Domo to automating forecasting with leadership, I build the robust foundations required for modern analytics. My work ensures that every dashboard and data mart is built on a framework of security, compliance, and forward-looking strategy.
+                                </p>
+                            </div>
 
-
-                            <div className="mt-12">
+                            {/* Technical Toolkit */}
+                            <div>
                                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                                     <span className="w-8 h-1 bg-neon-green rounded-full"></span>
-                                    Data Toolkit
+                                    Technical Toolkit
                                 </h3>
-                                <div className="flex flex-wrap gap-4">
-                                    {skills.map((skill, index) => (
-                                        <motion.div
-                                            key={index}
-                                            whileHover={{ y: -5, scale: 1.05 }}
-                                            className="px-5 py-3 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border-l-4 border-neon-green shadow-sm rounded-r-xl text-slate-700 dark:text-slate-200 font-medium text-sm flex items-center gap-2"
-                                        >
-                                            {skill}
-                                        </motion.div>
+                                <div className="grid grid-cols-1 gap-6">
+                                    {toolkitData.map((category, idx) => (
+                                        <div key={idx}>
+                                            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                                <div className="h-px bg-slate-200 dark:bg-slate-700 flex-grow"></div>
+                                                {category.category}
+                                            </h4>
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                                {category.tools.map((tool, toolIdx) => (
+                                                    <ToolCard key={toolIdx} tool={tool} />
+                                                ))}
+                                            </div>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
