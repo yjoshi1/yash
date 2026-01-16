@@ -13,13 +13,13 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed w-full z-50 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <nav className="fixed w-full z-50 bg-slate-50/80 dark:bg-matte-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <a href="#" className="text-2xl font-bold text-slate-900 dark:text-white tracking-tighter">
-                            yash<span className="text-indigo-600 dark:text-indigo-400">.</span>
+                            yash<span className="text-indigo-600 dark:text-neon-green">.</span>
                         </a>
                     </div>
 
@@ -30,21 +30,26 @@ const Navbar = () => {
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                                    className="text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition-colors"
                                 >
                                     {link.name}
                                 </a>
                             ))}
                             <button
                                 onClick={toggleTheme}
-                                className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors focus:outline-none"
+                                className="relative inline-flex h-8 w-14 items-center rounded-full bg-slate-200 dark:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-neon-green/50 focus:ring-offset-2 dark:focus:ring-offset-matte-black"
                                 aria-label="Toggle Dark Mode"
                             >
-                                {theme === 'dark' ? (
-                                    <Sun className="h-5 w-5 text-yellow-400" />
-                                ) : (
-                                    <Moon className="h-5 w-5 text-slate-600" />
-                                )}
+                                <span
+                                    className={`${theme === 'dark' ? 'translate-x-7 bg-slate-900' : 'translate-x-1 bg-white'
+                                        } inline-block h-6 w-6 transform rounded-full shadow-lg transition-transform duration-200 ease-in-out flex items-center justify-center`}
+                                >
+                                    {theme === 'dark' ? (
+                                        <Moon className="h-4 w-4 text-neon-green" />
+                                    ) : (
+                                        <Sun className="h-4 w-4 text-amber-500" />
+                                    )}
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -53,7 +58,7 @@ const Navbar = () => {
                     <div className="-mr-2 flex md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-neon-green focus:outline-none"
                         >
                             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                         </button>
@@ -69,7 +74,7 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 block px-3 py-2 rounded-md text-base font-medium"
+                                className="text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-neon-green block px-3 py-2 rounded-md text-base font-medium"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}

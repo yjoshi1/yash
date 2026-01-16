@@ -47,13 +47,13 @@ const Projects = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-indigo-500/10 transition-all duration-300"
+                        className="group bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-neon-green/10 transition-all duration-300"
                     >
                         <div className="flex items-start justify-between mb-6">
                             <div className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-xl group-hover:bg-indigo-50 dark:group-hover:bg-white/10 transition-colors">
                                 {project.icon}
                             </div>
-                            <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-indigo-500 transition-colors" />
+                            <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-neon-green transition-colors" />
                         </div>
 
                         <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">

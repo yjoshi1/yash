@@ -10,7 +10,7 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <span className="text-indigo-600 dark:text-indigo-400 font-medium tracking-wider uppercase text-sm mb-4 block">
+                <span className="text-indigo-600 dark:text-neon-green font-medium tracking-wider uppercase text-sm mb-4 block">
                     Portfolio
                 </span>
                 <h1 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
@@ -28,7 +28,7 @@ const Home = () => {
                 <div className="flex gap-4">
                     <a
                         href="#projects"
-                        className="group flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-full font-medium active:scale-95 transition-all"
+                        className="group flex items-center gap-2 bg-slate-900 dark:bg-neon-green text-white dark:text-matte-black px-6 py-3 rounded-full font-medium active:scale-95 transition-all"
                     >
                         View Work
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

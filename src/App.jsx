@@ -8,7 +8,7 @@ import Projects from './pages/Projects';
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+      <div className="min-h-screen bg-slate-50 dark:bg-matte-black transition-colors duration-300">
         <Navbar />
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
           <section id="home" className="min-h-screen flex flex-col justify-center">
