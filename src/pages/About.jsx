@@ -39,8 +39,8 @@ const ToolCard = ({ tool }) => {
             whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(45, 212, 191, 0.1)" }}
             whileTap={{ scale: 0.98 }}
             className={`cursor-pointer relative p-4 rounded-xl border transition-all duration-300 ${tool.highlight
-                    ? "bg-neon-green/10 border-neon-green/30 dark:bg-neon-green/5 dark:border-neon-green/20"
-                    : "bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 hover:border-neon-green/50 dark:hover:border-neon-green/50"
+                ? "bg-neon-green/10 border-neon-green/30 dark:bg-neon-green/5 dark:border-neon-green/20"
+                : "bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 hover:border-neon-green/50 dark:hover:border-neon-green/50"
                 } backdrop-blur-sm group`}
         >
             <div className="flex items-center gap-3">
@@ -106,7 +106,7 @@ const About = () => {
                                             </h4>
                                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                                 {category.tools.map((tool, toolIdx) => (
-                                                    <ToolCard key={toolIdx} tool={tool} />
+                                                    <ToolCard key={toolIdx} tool={tool} index={toolIdx} />
                                                 ))}
                                             </div>
                                         </div>
