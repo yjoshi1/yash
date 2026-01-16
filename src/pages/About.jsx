@@ -38,8 +38,8 @@ const ToolCard = ({ tool, index }) => {
             transition={{ duration: 0.5, delay: index * 0.05 }}
             whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(45, 212, 191, 0.1)" }}
             className={`relative p-4 rounded-xl border transition-all duration-300 ${tool.highlight
-                    ? "bg-neon-green/10 border-neon-green/30 dark:bg-neon-green/5 dark:border-neon-green/20"
-                    : "bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 hover:border-neon-green/50 dark:hover:border-neon-green/50"
+                ? "bg-neon-green/10 border-neon-green/30 dark:bg-neon-green/5 dark:border-neon-green/20"
+                : "bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 hover:border-neon-green/50 dark:hover:border-neon-green/50"
                 } backdrop-blur-sm group`}
         >
             <div className="flex items-center gap-3">
@@ -93,7 +93,6 @@ const About = () => {
                             {/* Technical Toolkit */}
                             <div>
                                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                                    <span className="w-8 h-1 bg-neon-green rounded-full"></span>
                                     Technical Toolkit
                                 </h3>
                                 <div className="grid grid-cols-1 gap-6">
