@@ -29,18 +29,17 @@ const toolkitData = [
     }
 ];
 
-const ToolCard = ({ tool }) => {
-    const [isClicked, setIsClicked] = useState(false);
-
+const ToolCard = ({ tool, index }) => {
     return (
         <motion.div
-            layout
-            onClick={() => setIsClicked(!isClicked)}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
             whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(45, 212, 191, 0.1)" }}
-            whileTap={{ scale: 0.98 }}
-            className={`cursor-pointer relative p-4 rounded-xl border transition-all duration-300 ${tool.highlight
-                ? "bg-neon-green/10 border-neon-green/30 dark:bg-neon-green/5 dark:border-neon-green/20"
-                : "bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 hover:border-neon-green/50 dark:hover:border-neon-green/50"
+            className={`relative p-4 rounded-xl border transition-all duration-300 ${tool.highlight
+                    ? "bg-neon-green/10 border-neon-green/30 dark:bg-neon-green/5 dark:border-neon-green/20"
+                    : "bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 hover:border-neon-green/50 dark:hover:border-neon-green/50"
                 } backdrop-blur-sm group`}
         >
             <div className="flex items-center gap-3">
@@ -49,18 +48,18 @@ const ToolCard = ({ tool }) => {
                 </div>
                 <div>
                     <h4 className="font-semibold text-sm text-slate-900 dark:text-white">{tool.name}</h4>
-                    {isClicked && (
-                        <motion.span
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="text-xs font-medium text-neon-green block"
-                        >
-                            {tool.badge}
-                        </motion.span>
-                    )}
+                    <motion.span
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: (index * 0.05) + 0.2 }}
+                        className="text-xs font-medium text-neon-green block"
+                    >
+                        {tool.badge}
+                    </motion.span>
                 </div>
             </div>
-            {!isClicked && tool.highlight && (
+            {tool.highlight && (
                 <span className="absolute top-2 right-2 flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-green opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-green"></span>
